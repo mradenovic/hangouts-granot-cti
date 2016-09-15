@@ -28,7 +28,7 @@
     {
       "matches": [
         "http://*/*",
-        "https://*/*"
+        "https://mail.google.com/*"
       ],
       "js": [
         "scripts/contentscript.js"
