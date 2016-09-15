@@ -27,11 +27,20 @@
   "content_scripts": [
     {
       "matches": [
-        "http://*/*",
         "https://mail.google.com/*"
       ],
       "js": [
         "scripts/gmail/contentscript.js"
+      ],
+      "run_at": "document_end",
+      "all_frames": false
+    },
+    {
+      "matches": [
+        "http://*/*admin.htm"
+      ],
+      "js": [
+        "scripts/granot/granot.js"
       ],
       "run_at": "document_end",
       "all_frames": false
