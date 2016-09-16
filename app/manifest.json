@@ -44,6 +44,16 @@
       ],
       "run_at": "document_end",
       "all_frames": false
+    },
+    {
+      "matches": [
+        "https://hangouts.google.com/*"
+      ],
+      "js": [
+        "scripts/hangouts/hangouts.js"
+      ],
+      "run_at": "document_end",
+      "all_frames": false
     }
   ]
 }
