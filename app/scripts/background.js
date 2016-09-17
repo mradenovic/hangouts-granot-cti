@@ -24,5 +24,7 @@ function granotOnMessage(msg) {
 
 function hangoutsOnMessage(msg) {
   console.log(msg);
-  hangoutsPort.postMessage({text: 'Hello Hangouts'});
+  if (msg.callerId && granotPort) {
+    granotPort.postMessage(msg);
+  }
 }
