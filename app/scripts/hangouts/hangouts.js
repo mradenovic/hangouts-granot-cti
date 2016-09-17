@@ -6,6 +6,7 @@ var url = document.URL;
 if (url.match(/StartPage#epreld/)) {
   port = chrome.runtime.connect({name: 'hangouts'});
 
+  port.postMessage({hangoutsIsReady: true});
   port.onMessage.addListener(hangoutsPortListener);
 
   ready('span[dir="ltr"]', function(element){
