@@ -1,6 +1,5 @@
 'use strict';
 
-var gmailPort;
 var granotPort;
 var hangoutsPort;
 
@@ -9,10 +8,7 @@ chrome.runtime.onInstalled.addListener(function (details) {
 });
 
 chrome.runtime.onConnect.addListener(function(port) {
-  if (port.name == 'gmail') {
-    gmailPort = port;
-    port.onMessage.addListener(gmailOnMessage);
-  } else if (port.name == 'granot') {
+  if (port.name == 'granot') {
     granotPort = port;
     port.onMessage.addListener(granotOnMessage);
   } else if (port.name == 'hangouts') {
@@ -20,16 +16,6 @@ chrome.runtime.onConnect.addListener(function(port) {
     port.onMessage.addListener(hangoutsOnMessage);
   }
 });
-
-function gmailOnMessage(msg) {
-  console.log(msg);
-  if (msg.joke == "Knock knock")
-    gmailPort.postMessage({question: "Who's there?"});
-  else if (msg.answer == "Madame")
-    gmailPort.postMessage({question: "Madame who?"});
-  else if (msg.answer == "Madame... Bovary")
-    gmailPort.postMessage({question: "I don't get it."});
-}
 
 function granotOnMessage(msg) {
   console.log(msg);

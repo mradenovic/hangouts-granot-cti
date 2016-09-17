@@ -27,16 +27,6 @@
   "content_scripts": [
     {
       "matches": [
-        "https://mail.google.com/*"
-      ],
-      "js": [
-        "scripts/gmail/contentscript.js"
-      ],
-      "run_at": "document_end",
-      "all_frames": false
-    },
-    {
-      "matches": [
         "http://*/*admin.htm"
       ],
       "js": [
