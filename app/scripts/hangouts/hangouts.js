@@ -7,7 +7,7 @@ if (url.match(/StartPage#epreld/)) {
   port = chrome.runtime.connect({name: 'hangouts'});
 
   port.postMessage({hangoutsIsReady: true});
-  port.onMessage.addListener(hangoutsPortListener);
+  port.onMessage.addListener(hangoutsOnMessage);
 
   ready('span[dir="ltr"]', function(element){
       var callerId = $(element).text();
@@ -16,6 +16,6 @@ if (url.match(/StartPage#epreld/)) {
   });
 }
 
-function hangoutsPortListener(msg) {
+function hangoutsOnMessage(msg) {
   console.log(port.name, msg);
 }
