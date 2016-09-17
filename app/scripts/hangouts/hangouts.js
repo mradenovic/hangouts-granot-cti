@@ -11,7 +11,9 @@ if (url.match(/StartPage#epreld/)) {
   port.onMessage.addListener(hangoutsPortListener);
 
   ready('span[dir="ltr"]', function(element){
-      console.log($(element).text());
+      var callerId = $(element).text();
+      console.log(callerId);
+      port.postMessage({callerId: callerId});
   });
 }
 
