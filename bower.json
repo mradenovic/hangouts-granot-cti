@@ -3,7 +3,8 @@
   "private": true,
   "version": "0.0.0",
   "dependencies": {
-    "jquery": "^3.1.0"
+    "jquery": "^3.1.0",
+    "ready": "ryanmorr/ready#^1.0.0"
   },
   "devDependencies": {
     "chai": "^3.5.0",
