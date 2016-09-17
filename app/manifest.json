@@ -50,6 +50,7 @@
         "https://hangouts.google.com/*"
       ],
       "js": [
+        "bower_components/jquery/dist/jquery.min.js",
         "scripts/hangouts/hangouts.js"
       ],
       "run_at": "document_end",
