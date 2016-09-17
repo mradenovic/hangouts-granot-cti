@@ -1,7 +1,7 @@
 'use strict';
 
 var port = chrome.runtime.connect({name: 'granot'});
-port.postMessage({text: 'Hello, Background'});
+port.postMessage({granotIsReady: true});
 port.onMessage.addListener(granotPortListener);
 
 function granotPortListener(msg) {
