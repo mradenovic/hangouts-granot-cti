@@ -2,8 +2,8 @@
 
 var port = chrome.runtime.connect({name: 'granot'});
 port.postMessage({granotIsReady: true});
-port.onMessage.addListener(granotPortListener);
+port.onMessage.addListener(granotOnMessage);
 
-function granotPortListener(msg) {
+function granotOnMessage(msg) {
   console.log(port.name, msg);
 }
