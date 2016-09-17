@@ -3,7 +3,7 @@
 var port;
 var url = document.URL;
 
-if (url.match(/StartPage#epreld/)) {
+if (url.match(/StartPage#epreld/) || url.match(/gmail#epreld/)) {
   port = chrome.runtime.connect({name: 'hangouts'});
 
   port.postMessage({hangoutsIsReady: true});
