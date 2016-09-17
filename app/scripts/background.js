@@ -13,17 +13,17 @@ chrome.runtime.onConnect.addListener(function(port) {
   console.log(port);
   if (port.name == 'gmail') {
     gmailPort = port;
-    port.onMessage.addListener(gmailPortListener);
+    port.onMessage.addListener(gmailOnMessage);
   } else if (port.name == 'granot') {
     granotPort = port;
-    port.onMessage.addListener(granotPortListener);
+    port.onMessage.addListener(granotOnMessage);
   } else if (port.name == 'hangouts') {
     hangoutsPort = port;
-    port.onMessage.addListener(hangoutsPortListener);
+    port.onMessage.addListener(hangoutsOnMessage);
   }
 });
 
-function gmailPortListener(msg) {
+function gmailOnMessage(msg) {
   console.log(msg);
   if (msg.joke == "Knock knock")
     gmailPort.postMessage({question: "Who's there?"});
@@ -33,12 +33,12 @@ function gmailPortListener(msg) {
     gmailPort.postMessage({question: "I don't get it."});
 }
 
-function granotPortListener(msg) {
+function granotOnMessage(msg) {
   console.log(msg);
   granotPort.postMessage({text: 'Hello Granot'});
 }
 
-function hangoutsPortListener(msg) {
+function hangoutsOnMessage(msg) {
   console.log(msg);
   hangoutsPort.postMessage({text: 'Hello Hangouts'});
 }
