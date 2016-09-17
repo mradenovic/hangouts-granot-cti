@@ -7,3 +7,7 @@ port.onMessage.addListener(hangoutsPortListener);
 function hangoutsPortListener(msg) {
   console.log(port.name, msg);
 }
+
+ready('span[dir="ltr"]', function(element){
+    console.log($(element).text());
+});
