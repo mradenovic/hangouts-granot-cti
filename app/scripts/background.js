@@ -9,8 +9,6 @@ chrome.runtime.onInstalled.addListener(function (details) {
 });
 
 chrome.runtime.onConnect.addListener(function(port) {
-  console.assert(port.name == "gmail");
-  console.log(port);
   if (port.name == 'gmail') {
     gmailPort = port;
     port.onMessage.addListener(gmailOnMessage);
