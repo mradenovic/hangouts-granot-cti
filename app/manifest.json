@@ -51,6 +51,7 @@
       ],
       "js": [
         "bower_components/jquery/dist/jquery.min.js",
+        "bower_components/ready/dist/ready.min.js",
         "scripts/hangouts/hangouts.js"
       ],
       "run_at": "document_end",
