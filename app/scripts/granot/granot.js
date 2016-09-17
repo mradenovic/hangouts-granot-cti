@@ -5,5 +5,8 @@ port.postMessage({granotIsReady: true});
 port.onMessage.addListener(granotOnMessage);
 
 function granotOnMessage(msg) {
-  console.log(port.name, msg);
+  if (msg.callerId) {
+    $('input[type=text]', window.parent.frames[1].document).val(msg.callerId);
+    $('form', window.parent.frames[1].document).submit();
+  }
 }
