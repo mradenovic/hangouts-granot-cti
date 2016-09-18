@@ -18,5 +18,11 @@ function hangoutsOnMessage(msg) {
 
 function hangoutsOnInboundCall(element) {
   var callerId = $(element).text();
-  port.postMessage({callerId: callerId});
+  var incoming = $('div:contains("Incoming call")');
+  incoming.off('click.hangouts').on('click.hangouts', function () {
+    port.postMessage({callerId: callerId});
+
+    // Prevent fireing the event more than once
+    incoming.off('click.hangouts');
+  });
 }
