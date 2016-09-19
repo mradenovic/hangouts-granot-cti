@@ -38,6 +38,17 @@
     },
     {
       "matches": [
+        "http://*/*mv~searchret*"
+      ],
+      "js": [
+        "bower_components/jquery/dist/jquery.min.js",
+        "scripts/granot/search_result.js"
+      ],
+      "run_at": "document_end",
+      "all_frames": false
+    },
+    {
+      "matches": [
         "https://hangouts.google.com/*",
         "https://mail.google.com/*"
       ],
